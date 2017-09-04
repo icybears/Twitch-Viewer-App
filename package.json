@@ -7,7 +7,7 @@
     "start":"webpack-dev-server --open"
   },
   "babel": {
-    "preset": [
+    "presets": [
       "env",
       "react"
     ],
