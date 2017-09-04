@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBox from './SearchBox';
 import api from '../utils/api';
+import Channel from './Channel';
 
  class App extends React.Component{
 
@@ -22,6 +23,8 @@ import api from '../utils/api';
                api.getChannels(searchTerm)
                     .then(data => {
                         this.setState({
+                            error: false,
+                            errorMsg:null,
                             isFetching: false,
                             searchTerm: null,
                             channels: data,
@@ -40,10 +43,22 @@ import api from '../utils/api';
     }
 
     render(){
+        const {
+                channels,
+                isFetching,
+                error,
+                errorMsg
+            } = this.state;
         return(
             <div>
                 <h1>Twitch Viewer App</h1>
                 <SearchBox searchName={this.searchName}/>
+                {isFetching && <div>Fetching data...</div>}
+                {error && <div>{errorMsg}</div>}
+                {
+                    channels && 
+                    channels.map(channel => <Channel {...channel} />)
+                }
             </div>
         )
     }
