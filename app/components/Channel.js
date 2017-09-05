@@ -16,7 +16,7 @@ function Channel(props) {
         <div className="channel">
             <img src={logo} alt={`Logo of ${display_name}`} />
             <h1>{display_name}</h1>
-            <div>
+            <div className="content">
                 <span>Followers: {followers}</span>
                 <span>Views: {views}</span>
                 <span>Game: {game}</span>

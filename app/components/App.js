@@ -2,13 +2,16 @@ import React from 'react';
 import SearchBox from './SearchBox';
 import api from '../utils/api';
 import Channel from './Channel';
+////FAKE DATA//////
+import mock from '../utils/mock-data';
+/////////////////
 
  class App extends React.Component{
 
     state = {
         isFetching:false,
         searchTerm: null,
-        channels: null,
+        channels: mock,
         error: null,
         errorMsg: null,
         
@@ -50,16 +53,18 @@ import Channel from './Channel';
                 errorMsg
             } = this.state;
         return(
-            <div>
+            <div id="root-container">
                 <h1>Twitch Viewer App</h1>
                 <SearchBox searchName={this.searchName}/>
                 {isFetching && <div>Fetching data...</div>}
                 {error && <div>{errorMsg}</div>}
+                <div id="channels-container">
                 {
                     channels && 
                     channels.map(channel => <Channel key={channel.display_name} 
                                                     {...channel} />)
                 }
+                </div>
             </div>
         )
     }
