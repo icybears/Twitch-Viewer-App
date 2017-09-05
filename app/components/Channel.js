@@ -19,6 +19,8 @@ function Channel(props) {
             <header>
                 <img src={default_logo} alt={`Logo of ${display_name}`} />
                 <h1>{display_name}</h1>
+                <button className="add-to-watch"><i className="fa fa-plus"/>&nbsp;&nbsp;Add to Watchlist</button>
+                <button className="visit-channel"><a href={url} target="_blank"><i className="fa fa-globe" />&nbsp;&nbsp;Visit channel</a></button>
             </header>
             <div className="content">
                 <div className="fol-and-views">

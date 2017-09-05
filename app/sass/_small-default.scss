@@ -61,8 +61,8 @@ html {
         div.channel{
             flex:1;
             width:100%;
-            min-width:250px;
-            max-width:250px;
+            min-width:270px;
+            max-width:270px;
             
             background-color:lighten($defaultWhite, 1%);
             box-shadow: 0 1px 5px rgba(0,0,0,0.6);
@@ -73,14 +73,60 @@ html {
                 width:100%;
                 height:250px;
                 overflow: hidden;
-                
+                position:relative;
+                button{
+                    border:none;
+                    outline:none;
+                    background-color:$defaultDark;
+                    color:$defaultWhite;
+                    // padding:.3em .4em;
+                    font-size: 1.1em;
+                    transition: all .7s ease-out;
+                    cursor:pointer;
+                    box-shadow:0 0 8px rgba(0,0,0,0.6);
+                    line-height:2em;
+                    height:2em;
+                    i{
+                        font-size: 1.5em;
+                        vertical-align:middle;
+                    }
+
+                }
+                button.add-to-watch{
+                    position: absolute;
+                    top:2em;
+                    right:-7.55em;
+                    background-color: rgb(29, 214, 119);
+                    font-weight:300;
+                    &:hover{
+                        right:0;
+                    }
+                }
+                button.visit-channel{
+                    position: absolute;
+                    top:5em;
+                    right:-6.1em;
+                    background-color:rgb(214, 99, 29);
+                    a{
+                        text-decoration:none;
+                        color:inherit;
+                    }
+                    &:hover{
+                        right:0;
+                    }
+                    i{
+                         margin-bottom:.1em;
+                    }
+                }
             }
             img{
                 width:100%;
                 transition: all .6s ease; 
+                opacity:0.8;
             }
             img:hover{
                 transform: scale(1.1);
+                opacity:1;
             }
             h1{
                 margin:0;
@@ -98,7 +144,7 @@ html {
                 padding:.2em .3em;
                div.fol-and-views{
                 margin-top:.5em;                
-                   padding: 0 1.5em;
+                   padding: 0 1.2em;
                    position:relative;
                    span{
                        display:inline-block;
@@ -110,7 +156,7 @@ html {
                }
                div.played-game{
                    margin-top:.5em;
-                   padding:0 1.5em;
+                   padding:0 1.2em;
                    position:relative;
                    height:100%;
                    display:flex;
@@ -122,14 +168,14 @@ html {
                }
                div.language{
                 margin-top:.5em;
-                   padding:0 1.5em;
+                   padding:0 1.2em;
                    span{
                        margin-left:.4em;
                    }
                }
               p{
                   display:inline-block;
-                  padding:0 1.5em 0 3em;
+                  padding:0 1.2em 0 3em;
               }
             }
         }
