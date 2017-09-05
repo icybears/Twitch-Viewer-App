@@ -416,24 +416,57 @@ html {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
       position: relative;
       margin: 1em 0; }
+      #root-container #channels-container div.channel header {
+        width: 100%;
+        height: 250px;
+        overflow: hidden; }
       #root-container #channels-container div.channel img {
-        width: 100%; }
+        width: 100%;
+        transition: all .6s ease; }
+      #root-container #channels-container div.channel img:hover {
+        transform: scale(1.1); }
       #root-container #channels-container div.channel h1 {
         margin: 0;
         font-size: 1.2em;
         position: absolute;
-        top: 0;
+        top: 11.5em;
         left: 0;
         width: 100%;
         padding: .2em .5em;
         background-color: rgba(0, 0, 0, 0.8);
+        background: linear-gradient(to bottom, rgba(5, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
         color: #fafafa; }
       #root-container #channels-container div.channel div.content {
         padding: .2em .3em; }
+        #root-container #channels-container div.channel div.content div.fol-and-views {
+          padding: 0 1.5em;
+          position: relative; }
+          #root-container #channels-container div.channel div.content div.fol-and-views span {
+            display: inline-block;
+            width: 50%; }
+          #root-container #channels-container div.channel div.content div.fol-and-views span:nth-of-type(2) {
+            text-align: right; }
+        #root-container #channels-container div.channel div.content div.played-game {
+          margin-top: .3em;
+          padding: 0 1.5em;
+          position: relative;
+          height: 100%;
+          display: flex;
+          justify-content: flex-start; }
+          #root-container #channels-container div.channel div.content div.played-game span {
+            margin-left: .4em; }
+        #root-container #channels-container div.channel div.content div.language {
+          margin-top: .3em;
+          padding: 0 1.5em; }
+          #root-container #channels-container div.channel div.content div.language span {
+            margin-left: .4em; }
+        #root-container #channels-container div.channel div.content p {
+          display: inline-block;
+          padding: 0 1.5em; }
 
 @media only screen and (min-width: 560px) {
   #root-container div#channels-container {
-    background-color: red;
-    width: 90%; } }
+    width: 90%;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=styles.css.map */
