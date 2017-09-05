@@ -57,7 +57,8 @@ import Channel from './Channel';
                 {error && <div>{errorMsg}</div>}
                 {
                     channels && 
-                    channels.map(channel => <Channel {...channel} />)
+                    channels.map(channel => <Channel key={channel.display_name} 
+                                                    {...channel} />)
                 }
             </div>
         )

@@ -11,8 +11,9 @@ function Channel(props) {
             game,
             language
         } = props;
+        
     return (
-        <div>
+        <div className="channel">
             <img src={logo} alt={`Logo of ${display_name}`} />
             <h1>{display_name}</h1>
             <div>
