@@ -22,16 +22,16 @@ function Channel(props) {
             </header>
             <div className="content">
                 <div className="fol-and-views">
-                <span><i className="fa fa-users" /> {followers}</span>
-                   <span> <i className="fa fa-eye" /> {views}</span>
+                <span title="Followers"><i className="fa fa-users" />&nbsp;{followers}</span>
+                   <span title="Views"><i className="fa fa-eye" />&nbsp;{views}</span>
                 </div>
-               <div className="played-game">
+               <div title="Game"className="played-game">
                     <i className="fa fa-gamepad" /><span> {game}</span>
                 </div>
-                <div className="language">
+                <div title="Language" className="language">
                     <i className="fa fa-language" /> <span> {language.toUpperCase()}</span> 
                 </div>
-                <div className="channel-status">
+                <div title="Status" className="channel-status">
                     <p>{status}</p>    
                 </div>      
             </div>

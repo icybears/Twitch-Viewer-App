@@ -2,17 +2,58 @@
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+
+    position: relative;
+    width:100%;
+    min-height:100%;
 }
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+@keyframes spin {
+    0%   { transform: rotateZ(0deg); }
+    25%   { transform: rotateZ(90deg); }
+    50%   { transform: rotateZ(180deg); }
+    75%   { transform: rotateZ(270deg); }
+    100% { transform: rotateZ(360deg); }
+  }
 #root-container{
+   
     padding: 1em $gutter;
     background-color:$defaultWhite;
     font-size: 16px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    
+    #loader{
+        position:absolute;
+        top:0;
+        left:0;
+        background-color:rgba(0,0,0,0.5);
+        width:100%;
+        min-height: 100%;
+        overflow-y: hidden;
+        z-index: 3;
+         position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: $defaultWhite;
+        aside{
+            position: absolute;
+            top:50vh;
+            color: $defaultWhite;
+            font-size: 2em;
+            #spinner{
+                animation: spin 2s linear;
+            }
+            width:100%;
+            text-align:center;
+        }
+        
+       
+    }
     #channels-container{
         display:flex;
         justify-content: space-around;
@@ -56,6 +97,7 @@ html {
             div.content{
                 padding:.2em .3em;
                div.fol-and-views{
+                margin-top:.5em;                
                    padding: 0 1.5em;
                    position:relative;
                    span{
@@ -67,7 +109,7 @@ html {
                  }
                }
                div.played-game{
-                   margin-top:.3em;
+                   margin-top:.5em;
                    padding:0 1.5em;
                    position:relative;
                    height:100%;
@@ -79,7 +121,7 @@ html {
                    }
                }
                div.language{
-                    margin-top:.3em;              
+                margin-top:.5em;
                    padding:0 1.5em;
                    span{
                        margin-left:.4em;
@@ -87,7 +129,7 @@ html {
                }
               p{
                   display:inline-block;
-                  padding:0 1.5em;
+                  padding:0 1.5em 0 3em;
               }
             }
         }

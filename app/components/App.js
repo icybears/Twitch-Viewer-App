@@ -56,7 +56,10 @@ import mock from '../utils/mock-data';
             <div id="root-container">
                 <h1>Twitch Viewer App</h1>
                 <SearchBox searchName={this.searchName}/>
-                {isFetching && <div>Fetching data...</div>}
+                {isFetching && 
+                    <div id="loader">
+                        <aside><i id="spinner" className="fa fa-spinner"/>&nbsp;Fetching data...</aside>
+                    </div>}
                 {error && <div>{errorMsg}</div>}
                 <div id="channels-container">
                 {
