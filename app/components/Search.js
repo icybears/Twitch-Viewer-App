@@ -4,7 +4,13 @@ import SearchBox from './SearchBox';
 
 function Search(props) {
 
-    const {channels, searchName} = props;
+    const { 
+            channels, 
+            searchName, 
+            addToWatchlist,
+            isWatched,
+            removeFromWatchlist
+        } = props;
     return (
         <div className="page-container">
                 <SearchBox searchName={searchName}/>
@@ -13,7 +19,11 @@ function Search(props) {
                 {
                     channels && 
                     channels.map(channel => <Channel key={channel.display_name} 
-                                                    {...channel} />)
+                                                    {...channel} 
+                                                    addToWatchlist={addToWatchlist}
+                                                    isWatched={isWatched}
+                                                    removeFromWatchlist={removeFromWatchlist}
+                                                    />)
                 }
                 </div>
         </div>

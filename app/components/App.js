@@ -15,7 +15,7 @@ import mock from '../utils/mock-data';
         channels: mock,
         error: null,
         errorMsg: null,
-        
+        watchlist: [],
     }
 
     searchName = (searchTerm) => {
@@ -45,13 +45,42 @@ import mock from '../utils/mock-data';
             }
         )
     }
+    
+    addToWatchlist = (channel_id) => {
+        this.setState( prevState => {
+           const newList = prevState.watchlist.concat([channel_id]);
 
+            return({
+                watchlist: newList
+            })
+        })
+    }
+    isWatched = (id) => {
+        const watchlist = this.state.watchlist;
+        if(watchlist.indexOf(id) !== -1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    removeFromWatchlist = (id) => {
+        if(this.state.watchlist.indexOf(id) !== -1){
+            this.setState( prevState => {
+                   const updated = prevState.watchlist.filter(channelId => channelId !== id);
+                   return(
+                       {
+                           watchlist: updated
+                       }
+                   )
+            })
+        }
+    }
     render(){
         const {
                 channels,
                 isFetching,
                 error,
-                errorMsg
+                errorMsg,
             } = this.state;
         return(
             <div id="root-container">
@@ -61,7 +90,12 @@ import mock from '../utils/mock-data';
                         <aside><i id="spinner" className="fa fa-spinner"/>&nbsp;Fetching data...</aside>
                     </div>}
                 {error && <div>{errorMsg}</div>}
-                <Search channels={channels} searchName={this.searchName}/>
+                <Search channels={channels} 
+                        searchName={this.searchName}
+                        addToWatchlist={this.addToWatchlist}
+                        removeFromWatchlist={this.removeFromWatchlist}
+                        isWatched={this.isWatched}
+                        />
                 
             </div>
         )

@@ -81,7 +81,7 @@ html {
                     color:$defaultWhite;
                     // padding:.3em .4em;
                     font-size: 1.1em;
-                    transition: all .7s ease-out;
+                    transition: all .5s ease-out;
                     cursor:pointer;
                     box-shadow:0 0 8px rgba(0,0,0,0.6);
                     line-height:2em;
@@ -95,12 +95,21 @@ html {
                 button.add-to-watch{
                     position: absolute;
                     top:2em;
-                    right:-7.55em;
+                    right:-8.0em;
                     background-color: rgb(29, 214, 119);
                     font-weight:300;
+                    width:10em;
+                    text-align:left;
                     &:hover{
                         right:0;
                     }
+                    &:active{
+                        color:$defaultDark;
+                    }
+                    
+                }
+                button.add-to-watch.added{
+                    background-color:$defaultPurple;
                 }
                 button.visit-channel{
                     position: absolute;
