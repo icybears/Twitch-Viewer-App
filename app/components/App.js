@@ -3,6 +3,7 @@ import SearchBox from './SearchBox';
 import api from '../utils/api';
 import Channel from './Channel';
 import Search from './Search';
+import Nav from './Nav';
 ////FAKE DATA//////
 import mock from '../utils/mock-data';
 /////////////////
@@ -85,6 +86,7 @@ import mock from '../utils/mock-data';
         return(
             <div id="root-container">
                 <h1>Twitch Viewer App</h1>
+                <Nav />
                 {isFetching && 
                     <div id="loader">
                         <aside><i id="spinner" className="fa fa-spinner"/>&nbsp;Fetching data...</aside>
