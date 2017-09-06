@@ -21,6 +21,13 @@ const api = {
             }
         })
         
-    )
+    ),
+    getUsers: arrayOfIds => {
+       return arrayOfIds.map( id => (
+           axios.get()
+       ))
+    }
+
+    
 }
 export default api;

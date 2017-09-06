@@ -473,6 +473,14 @@ html {
         position: relative;
         border-right: solid 1px black;
         cursor: pointer; }
+        #root-container nav ul li .active {
+          border-right: solid 2px rebeccapurple; }
+        #root-container nav ul li a {
+          color: inherit;
+          text-decoration: none;
+          width: 100%;
+          height: 100%;
+          display: block; }
         #root-container nav ul li:first-child {
           width: 13%; }
         #root-container nav ul li:not(:first-child):after {

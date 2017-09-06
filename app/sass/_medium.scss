@@ -41,28 +41,41 @@
             width: 4.2em;
             background-color: transparent;
             li {
-                width: 100%;
                 
+                    // a:nth-child(1).active {
+                    //     border-right: solid 2px #D6631D;
+                    //     background-color:yellow;
+                    // }
+                    // a:nth-of-type(2).active {
+                    //     border-right: solid 2px #1DD677;
+                    //     background-color:yellow;
+                        
+                    // }
+                    // a:nth-of-type(2).active {
+                    //     border-right: solid 2px #8A45EA;
+                    //     background-color:yellow;
+                        
+                    // }
+                
+                width: 100%;
                 height: auto;
                 line-height: auto;
                 border-right: none;
                 border-bottom: solid 1px darken($defaultDark, 20%);
-                
                 &:first-child {
                     width: 100%;
                     margin-bottom: 3em;
-                    border-top:solid 1px rgba(0,0,0,0.7);
-                    border-bottom:solid 1px rgba(0,0,0,0.7);
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
-                    button{
-                        width:100%;
-                        cursor:pointer;
+                    border-top: solid 1px rgba(0, 0, 0, 0.7);
+                    border-bottom: solid 1px rgba(0, 0, 0, 0.7);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+                    button {
+                        width: 100%;
+                        cursor: pointer;
                         padding: .3em .5em;
                     }
                 }
-                &:nth-child(2){
-                    border-top:solid 1px rgba(0,0,0,0.7);
-                    
+                &:nth-child(2) {
+                    border-top: solid 1px rgba(0, 0, 0, 0.7);
                 }
                 &:not(:first-child):after {
                     background-color: darken($defaultPurple, 10%);
@@ -75,7 +88,6 @@
                     font-size: .7em;
                     padding: 0 .5em;
                     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-                    
                 }
             }
         }

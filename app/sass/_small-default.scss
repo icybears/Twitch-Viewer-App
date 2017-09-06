@@ -19,6 +19,7 @@ html {
     75%   { transform: rotateZ(270deg); }
     100% { transform: rotateZ(360deg); }
   }
+  
 #root-container{
     
     padding: 1.5em $gutter/2;
@@ -77,6 +78,25 @@ html {
 
             }
             li{
+                .active{
+                    border-right: solid 2px rebeccapurple;
+                }
+                a{
+                    color:inherit;
+                    text-decoration:none;
+                    width:100%;
+                    height:100%;
+                    display:block;
+                    // &.active:nth-of-type(1){
+                    //         border-top:solid 2px #D6631D;
+                    // }
+                    // &.active:nth-of-type(2){
+                    //         border-top: solid 2px #1DD677;
+                    // }
+                    // &.active:nth-of-type(2){
+                    //         border-top: solid 2px #8A45EA;
+                    // }
+                }
                 background-color:$defaultDark;
         background-color:darken($defaultPurple, 40%);
         

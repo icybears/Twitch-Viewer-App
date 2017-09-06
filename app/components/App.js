@@ -4,6 +4,7 @@ import api from '../utils/api';
 import Channel from './Channel';
 import Search from './Search';
 import Nav from './Nav';
+import Watchlist from './Watchlist'
 import {Route} from 'react-router-dom'
 ////FAKE DATA//////
 import mock from '../utils/mock-data';
