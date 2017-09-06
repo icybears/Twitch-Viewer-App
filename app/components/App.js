@@ -85,20 +85,21 @@ import mock from '../utils/mock-data';
             } = this.state;
         return(
             <div id="root-container">
-                <h1>Twitch Viewer App</h1>
+                <h1>Twitch Viewer App<span>by Icybears</span></h1>
                 <Nav />
                 {isFetching && 
                     <div id="loader">
                         <aside><i id="spinner" className="fa fa-spinner"/>&nbsp;Fetching data...</aside>
                     </div>}
                 {error && <div>{errorMsg}</div>}
-                <Search channels={channels} 
-                        searchName={this.searchName}
-                        addToWatchlist={this.addToWatchlist}
-                        removeFromWatchlist={this.removeFromWatchlist}
-                        isWatched={this.isWatched}
-                        />
-                
+                <section id="view">
+                    <Search channels={channels} 
+                            searchName={this.searchName}
+                            addToWatchlist={this.addToWatchlist}
+                            removeFromWatchlist={this.removeFromWatchlist}
+                            isWatched={this.isWatched}
+                            />
+                </section>
             </div>
         )
     }

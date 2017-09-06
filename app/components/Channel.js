@@ -36,7 +36,7 @@ class Channel extends React.Component {
         <div className="channel">
             <header>
                 <img src={default_logo} alt={`Logo of ${display_name}`} />
-                <h1>{display_name}</h1>
+                <h2 className="name">{display_name}</h2>
                 
                 <button className={buttonClass} 
                         onClick={this.handleClick}>
