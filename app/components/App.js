@@ -4,6 +4,7 @@ import api from '../utils/api';
 import Channel from './Channel';
 import Search from './Search';
 import Nav from './Nav';
+import {Route} from 'react-router-dom'
 ////FAKE DATA//////
 import mock from '../utils/mock-data';
 /////////////////
@@ -93,12 +94,15 @@ import mock from '../utils/mock-data';
                     </div>}
                 {error && <div>{errorMsg}</div>}
                 <section id="view">
-                    <Search channels={channels} 
+                    <Route path="/search" render={() => (
+                        <Search channels={channels} 
                             searchName={this.searchName}
                             addToWatchlist={this.addToWatchlist}
                             removeFromWatchlist={this.removeFromWatchlist}
                             isWatched={this.isWatched}
                             />
+                    )}/>
+                    
                 </section>
             </div>
         )
