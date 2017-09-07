@@ -12,7 +12,6 @@ class User extends React.Component {
     }
     componentDidMount = () => {
         const {_id} = this.props.user;
-        console.log(_id);
         api.getStream(_id)
         .then( data => {
             console.log(data);
@@ -29,7 +28,7 @@ class User extends React.Component {
                     fetching: false,
                     isOnline: true,
                     viewers: data.viewers,
-                    preview_url: data.preview.medium,
+                    preview_url: data.preview.large,
                     game:data.game
                 })
             }
@@ -57,12 +56,13 @@ class User extends React.Component {
         const logo_url = (logo!== null) ? logo:"https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/404_user_300x300.png"
         return (
             <div className={isOnline?"user is-online": "user is-offline"}>
+                { fetching !== false && <aside className="updating"><i className="fa fa-spinner"/></aside>}
                 <header className="user-header">
                 <h2>{display_name}</h2>
                     <img src={logo_url} alt={`Logo of ${display_name}`} />
                 </header>
                 <main className="user-info">
-                    { fetching !== false && <aside>Updating status</aside>}
+                    
                     <p className="online-status">
                        {isOnline && <span className="online">ONLINE</span>}
                         {!isOnline && <span className="offline">OFFLINE</span>}
