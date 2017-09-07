@@ -12,7 +12,8 @@ function Search(props) {
             removeFromWatchlist
         } = props;
     return (
-        <div className="page-container">
+        <div id="search-container">
+            <h2 id="search-title">Search</h2>
                 <SearchBox searchName={searchName}/>
                
                 <div id="channels-container">
