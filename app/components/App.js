@@ -4,8 +4,9 @@ import api from '../utils/api';
 import Channel from './Channel';
 import Search from './Search';
 import Nav from './Nav';
-import Watchlist from './Watchlist'
-import {Route} from 'react-router-dom'
+import Watchlist from './Watchlist';
+import Main from './Main';
+import {Route, Switch} from 'react-router-dom';
 ////FAKE DATA//////
 import mock from '../utils/mock-data';
 /////////////////
@@ -19,6 +20,7 @@ import mock from '../utils/mock-data';
         error: null,
         errorMsg: null,
         watchlist: [],
+        watchlist_users:[]
     }
 
     searchName = (searchTerm) => {
@@ -49,12 +51,18 @@ import mock from '../utils/mock-data';
         )
     }
     
-    addToWatchlist = (channel_id) => {
+    addToWatchlist = (id) => {
         this.setState( prevState => {
-           const newList = prevState.watchlist.concat([channel_id]);
+            const channels = this.state.channels;
+           const newList = prevState.watchlist.concat([id]);
+           const updatedUsers = prevState.watchlist_users
+                                        .concat(
+                                            channels.filter(channel => 
+                                                channel._id === id))
 
             return({
-                watchlist: newList
+                watchlist: newList,
+                watchlist_users: updatedUsers
             })
         })
     }
@@ -69,10 +77,12 @@ import mock from '../utils/mock-data';
     removeFromWatchlist = (id) => {
         if(this.state.watchlist.indexOf(id) !== -1){
             this.setState( prevState => {
-                   const updated = prevState.watchlist.filter(channelId => channelId !== id);
+                   const updatedList = prevState.watchlist.filter(channelId => channelId !== id);
+                   const updatedUsers = prevState.watchlist_users.filter(user =>user._id !== id);
                    return(
                        {
-                           watchlist: updated
+                           watchlist: updatedList,
+                           watchlist_users: updatedUsers
                        }
                    )
             })
@@ -84,7 +94,9 @@ import mock from '../utils/mock-data';
                 isFetching,
                 error,
                 errorMsg,
+                watchlist_users
             } = this.state;
+            // api.getStream('124466999').then(data => {console.log(data)});
         return(
             <div id="root-container">
                 <h1>Twitch Viewer App<span>by Icybears</span></h1>
@@ -95,15 +107,19 @@ import mock from '../utils/mock-data';
                     </div>}
                 {error && <div>{errorMsg}</div>}
                 <section id="view">
-                    <Route path="/search" render={() => (
-                        <Search channels={channels} 
-                            searchName={this.searchName}
-                            addToWatchlist={this.addToWatchlist}
-                            removeFromWatchlist={this.removeFromWatchlist}
-                            isWatched={this.isWatched}
-                            />
-                    )}/>
-                    
+                        <Route exact path="/" component={Main} />
+                        <Route path="/search" render={() => (
+                            <Search channels={channels} 
+                                searchName={this.searchName}
+                                addToWatchlist={this.addToWatchlist}
+                                removeFromWatchlist={this.removeFromWatchlist}
+                                isWatched={this.isWatched}
+                                />
+                        )}/>
+                        <Route path="/watchlist" render={() => (
+                            <Watchlist watchlist_users={watchlist_users} />
+                        )
+                        } />
                 </section>
             </div>
         )

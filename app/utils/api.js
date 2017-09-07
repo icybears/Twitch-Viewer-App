@@ -3,14 +3,18 @@ const clientId = "ga6k48ywrxzdh7jwka0ns8582p2ut8";
 const rootUrl = "https://api.twitch.tv/kraken";
 const queryType = "search";
 const searchType = "channels";
-const url = `${rootUrl}/${queryType}/${searchType}`;
+const channels_url = `${rootUrl}/${queryType}/${searchType}`;
+const stream_url=`${rootUrl}/streams/`;
 
 const api = {
     getChannels: searchTerm => (
-        axios.get(url, {
+        axios.get(channels_url, {
             params:{
                 query: encodeURI(searchTerm),
                 client_id: clientId
+            },
+            headers: {
+                Accept: 'application/vnd.twitchtv.v5+json'
             }
         })
         .then((response) => {
@@ -22,11 +26,17 @@ const api = {
         })
         
     ),
-    getUsers: arrayOfIds => {
-       return arrayOfIds.map( id => (
-           axios.get()
-       ))
-    }
+    getStream: channel_id => (
+        axios.get(`${stream_url}/${channel_id}`, {
+            params: {
+                client_id: clientId
+            },
+            headers: {
+                Accept: 'application/vnd.twitchtv.v5+json'
+            }
+        })
+        .then(response => response.data.stream)
+    )
 
     
 }

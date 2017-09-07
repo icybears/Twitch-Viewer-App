@@ -18,7 +18,7 @@ function Search(props) {
                 <div id="channels-container">
                 {
                     channels && 
-                    channels.map(channel => <Channel key={channel.display_name} 
+                    channels.map(channel => <Channel key={channel._id} 
                                                     {...channel} 
                                                     addToWatchlist={addToWatchlist}
                                                     isWatched={isWatched}
