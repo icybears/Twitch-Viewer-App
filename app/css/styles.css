@@ -416,6 +416,13 @@ html {
     transform: rotateZ(270deg); }
   100% {
     transform: rotateZ(360deg); } }
+@keyframes beep {
+  0% {
+    box-shadow: 0 0 0 #1dd676; }
+  70% {
+    box-shadow: 0 0 30px #1dd677; }
+  100% {
+    box-shadow: 0 0 0 #1dd677; } }
 #root-container {
   position: relative;
   padding: 1.5em 1em;
@@ -441,7 +448,6 @@ html {
       font-weight: 300; }
   #root-container section#view {
     position: relative;
-    height: 100%;
     padding-top: 8em; }
   #root-container nav {
     position: fixed;
@@ -544,6 +550,19 @@ html {
       left: 0;
       color: #301a4d;
       font-weight: 400; }
+    #root-container #main-container main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      #root-container #main-container main ul {
+        margin: 3em auto;
+        list-style: none;
+        padding: 0 1em;
+        font-size: 1.5em;
+        color: #301a4d; }
+        #root-container #main-container main ul li {
+          margin: 1em 0; }
   #root-container #search-container {
     padding-top: 3.8em;
     position: relative; }
@@ -662,7 +681,7 @@ html {
     justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     padding-top: 3.8em;
     padding-bottom: 3em; }
     #root-container #watchlist-container h2#watchlist-title {
@@ -696,7 +715,8 @@ html {
       #root-container #watchlist-container div.user.is-offline {
         border-bottom: solid 0.3em #bb534d; }
       #root-container #watchlist-container div.user.is-online {
-        border-bottom: solid 0.3em #06e0ab; }
+        border-bottom: solid 0.3em #06e0ab;
+        animation: beep 2s ease-in infinite; }
       #root-container #watchlist-container div.user aside.updating {
         position: absolute;
         width: 100%;
