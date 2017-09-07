@@ -56,32 +56,31 @@ class User extends React.Component {
         } = this.state;
         const logo_url = (logo!== null) ? logo:"https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/404_user_300x300.png"
         return (
-            <div className="user">
+            <div className={isOnline?"user is-online": "user is-offline"}>
                 <header className="user-header">
+                <h2>{display_name}</h2>
                     <img src={logo_url} alt={`Logo of ${display_name}`} />
-                    <h2>{display_name}</h2>
                 </header>
                 <main className="user-info">
                     { fetching !== false && <aside>Updating status</aside>}
                     <p className="online-status">
-                        Currently&nbsp;{isOnline && <span className="online">online</span>}
-                        {!isOnline && <span className="offline">offline</span>}
+                       {isOnline && <span className="online">ONLINE</span>}
+                        {!isOnline && <span className="offline">OFFLINE</span>}
                     </p>
                     
                     <p className="viewers-count">
-                        Viewers:&nbsp;{isOnline && <span className="viewers">{viewers}</span>}
+                        <i className="fa fa-eye" />&nbsp;{isOnline && <span className="viewers">{viewers}</span>}
                         {!isOnline && <span className="viewers">N/A</span>}
                     </p>
                     <p className="game-played">
-                        Game:&nbsp;{isOnline && <span className="game-playing">{game}</span>}
+                        <i className="fa fa-gamepad" />&nbsp;{isOnline && <span className="game-playing">{game}</span>}
                         {!isOnline && <span className="game-playing">N/A</span>}
                     </p>
                     <p className="preview">
-                        {isOnline && <button><a href={preview_url} target="_blank">Stream Preview</a></button>}
-                        {!isOnline && <span>No preview available</span>}                        
+                        {isOnline && <button><a href={preview_url} target="_blank">Preview Stream</a></button>}                       
                     </p>
                     <p className="visit-channel">
-                        <button><a href={url} target="_blank">Visit Channel</a></button>
+                        <button><a href={url} target="_blank"><i className="fa fa-external-link" />&nbsp;Visit Channel</a></button>
                     </p>
                 </main>
             </div>

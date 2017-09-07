@@ -417,7 +417,8 @@ html {
   padding-top: 0;
   background-color: #fafafa;
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  height: 100%; }
   #root-container h1 {
     position: absolute;
     top: 0;
@@ -434,6 +435,7 @@ html {
       padding-left: 1em;
       font-weight: 300; }
   #root-container section#view {
+    min-height: 100vh;
     padding-top: 8em; }
   #root-container nav {
     position: fixed;
@@ -632,11 +634,73 @@ html {
           display: inline-block;
           padding: 0 1.2em 0 3em; }
   #root-container #watchlist-container {
-    padding: 1em 2em; }
+    display: flex;
+    flex-direction: columns;
+    align-items: center;
+    flex-wrap: wrap; }
     #root-container #watchlist-container div.user {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start; }
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+      margin-top: .5em;
+      margin-bottom: .5em;
+      height: 15em;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); }
+      #root-container #watchlist-container div.user.is-offline {
+        border-bottom: solid 0.3em #bb534d; }
+      #root-container #watchlist-container div.user.is-online {
+        border-bottom: solid 0.3em #06e0ab; }
+      #root-container #watchlist-container div.user header.user-header h2 {
+        margin: 0;
+        padding: .3em .5em;
+        text-align: center;
+        color: #180d27; }
+      #root-container #watchlist-container div.user header.user-header img {
+        width: 150px;
+        border-radius: 100%; }
+      #root-container #watchlist-container div.user main.user-info {
+        padding: .3em .5em;
+        width: 11em;
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
+        background-color: #180d27;
+        color: #ebebeb; }
+        #root-container #watchlist-container div.user main.user-info p {
+          font-size: .9em;
+          margin: .5em 0; }
+          #root-container #watchlist-container div.user main.user-info p span.online {
+            color: #06e0ab; }
+          #root-container #watchlist-container div.user main.user-info p span.offline {
+            color: #bb534d; }
+        #root-container #watchlist-container div.user main.user-info p.game-played {
+          display: flex;
+          justify-content: flex-start; }
+          #root-container #watchlist-container div.user main.user-info p.game-played span.game-playing {
+            flex: 2; }
+        #root-container #watchlist-container div.user main.user-info p.preview,
+        #root-container #watchlist-container div.user main.user-info p.visit-channel {
+          text-align: center; }
+        #root-container #watchlist-container div.user main.user-info button {
+          border: none;
+          outline: none;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+          padding: .3em .4em;
+          background-color: #7741bf;
+          transition: all .3s ease; }
+          #root-container #watchlist-container div.user main.user-info button a {
+            color: inherit;
+            text-decoration: none; }
+          #root-container #watchlist-container div.user main.user-info button:hover {
+            background-color: #bb534d;
+            color: #fafafa; }
+          #root-container #watchlist-container div.user main.user-info button:active {
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+            color: #fafafa;
+            background-color: #06e0ab; }
   #root-container .clearfix :after {
     content: "";
     display: table;
