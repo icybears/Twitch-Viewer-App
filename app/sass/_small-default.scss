@@ -371,6 +371,7 @@ html {
             }
             div.content {
                 padding: .2em .3em;
+                padding-bottom:.8em;
                 div.fol-and-views {
                     margin-top: .5em;
                     padding: 0 1.2em;
@@ -401,10 +402,20 @@ html {
                         margin-left: .4em;
                     }
                 }
-                p {
-                    display: inline-block;
-                    padding: 0 1.2em 0 3em;
+                div.channel-status{
+                    margin-top: .5em;
+                    padding: 0 1.2em;
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    p {
+                        margin-left: .4em;
+                        margin-top:0;
+                        margin-bottom:0;
+                    }
                 }
+                
             }
         }
     }

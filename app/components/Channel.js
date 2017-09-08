@@ -32,6 +32,7 @@ class Channel extends React.Component {
         
         const default_logo = logo === null ? 'https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/404_user_300x300.png': logo;
        const buttonClass= isWatched(_id)?"add-to-watch added":"add-to-watch";
+       const hasStatus = status ? status:"N/A";
     return (
         <div className="channel">
             <header>
@@ -66,7 +67,7 @@ class Channel extends React.Component {
                     <i className="fa fa-language" /> <span> {language.toUpperCase()}</span> 
                 </div>
                 <div title="Status" className="channel-status">
-                    <p>{status}</p>    
+                    <i className="fa fa-pencil-square-o"/><p>{hasStatus}</p>    
                 </div>      
             </div>
         </div>
