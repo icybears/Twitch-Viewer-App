@@ -23,13 +23,14 @@ export default class SearchBox extends Component {
     render() {
         const {inputVal} = this.state;
         return (
-            <div>
+            <div id="searchbox-container">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="search"
+                    <input type="search" name="search"
                          value={inputVal} 
                          onChange={this.handleChange}
+                         autoComplete="off"
                          />
-                    <input type="submit" name="submit" value="Search"/>
+                    <button type="submit" name="submit"><i className="fa fa-search" /></button>
                 </form>
             </div>
         )

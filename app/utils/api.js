@@ -20,10 +20,11 @@ const api = {
         .then((response) => {
             if(response.data.channels && response.data.channels.length > 0){
                 return response.data.channels;
-            }else{
-                throw "We couldn't find a match for your query";
             }
-        })
+                
+        }).catch( err => {
+            return err;
+        }) 
         
     ),
     getStream: channel_id => (

@@ -9,13 +9,15 @@ function Search(props) {
             searchName, 
             addToWatchlist,
             isWatched,
-            removeFromWatchlist
+            removeFromWatchlist,
+            error,
+            errorMsg
         } = props;
     return (
         <div id="search-container">
             <h2 id="search-title">Search</h2>
                 <SearchBox searchName={searchName}/>
-               
+               { error && <aside className="error-msg"><i className="fa fa-exclamation-circle"/>&nbsp;{errorMsg}</aside>}
                 <div id="channels-container">
                 {
                     channels && 

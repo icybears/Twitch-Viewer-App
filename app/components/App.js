@@ -26,11 +26,14 @@ import mock from '../utils/mock-data';
     searchName = (searchTerm) => {
         this.setState({
             searchTerm: searchTerm,
-            isFetching: true
+            isFetching: true,
+            error: false,
+            errorMsg: null
         },
             () => {
                api.getChannels(searchTerm)
                     .then(data => {
+                        if(data && data.length>0){
                         this.setState({
                             error: false,
                             errorMsg:null,
@@ -38,6 +41,10 @@ import mock from '../utils/mock-data';
                             searchTerm: null,
                             channels: data,
                         })
+                    }
+                    else{
+                        throw "We couldn't find a match for your query";
+                    }
                     })
                     .catch( err => {
                         this.setState({
@@ -96,7 +103,7 @@ import mock from '../utils/mock-data';
                 errorMsg,
                 watchlist_users
             } = this.state;
-            // api.getStream('124466999').then(data => {console.log(data)});
+
         return(
             <div id="root-container">
                 <h1>Twitch Viewer App<span>by Icybears</span></h1>
@@ -105,7 +112,6 @@ import mock from '../utils/mock-data';
                     <div id="loader">
                         <aside><i id="spinner" className="fa fa-spinner"/>&nbsp;Fetching data...</aside>
                     </div>}
-                {error && <div>{errorMsg}</div>}
                 <section id="view">
                         <Route exact path="/" component={Main} />
                         <Route path="/search" render={() => (
@@ -114,6 +120,8 @@ import mock from '../utils/mock-data';
                                 addToWatchlist={this.addToWatchlist}
                                 removeFromWatchlist={this.removeFromWatchlist}
                                 isWatched={this.isWatched}
+                                error={error}
+                                errorMsg={errorMsg}
                                 />
                         )}/>
                         <Route path="/watchlist" render={() => (

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Main() {
     return (
@@ -7,15 +8,16 @@ function Main() {
             <main>
                 <ul>
                     <li>
-                        Search for your favorite twitch streamers and add them
+                        <Link to="/search">Search</Link> for your favorite twitch streamers and add them
                             to your watchlist.
                     </li>
                     <li>
-                        Manage your watchlist and keep up with all your favorite streamers !
+                        Manage your <Link to="/watchlist">watchlist</Link> and keep up with all your favorite streamers !
                     </li>
                     <li>
                         Never miss out !
                     </li>
+                    <li><a href="https://github.com/icybears/Twitch-Viewer-App">Github Repository</a></li>
                 </ul>
             </main>
         </div>
