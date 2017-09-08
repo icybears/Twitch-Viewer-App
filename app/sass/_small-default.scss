@@ -207,6 +207,16 @@ html {
                 color:darken($defaultPurple, 30%);
                 li{
                     margin:1em 0;
+                    font-weight: 300;
+                    a{
+                        color:$defaultDark;
+                        text-decoration: none;
+                        font-weight:400;
+                    }
+                    a:active,
+                    a:hover{
+                        text-decoration:underline;
+                    }
                 }
             }
         }
@@ -221,6 +231,10 @@ html {
             left:0;
             top:0;
         }
+       aside#empty-search{
+        font-size: 2em;
+        color:darken($defaultWhite,8%);
+       }
         aside.error-msg{
             text-align:center;
             padding:.2em .3em;
@@ -455,8 +469,10 @@ html {
                     color: darken($defaultPurple, 40%);
                 }
                 img {
+                    display:block;
                     width: 150px;
                     border-radius: 100%;
+                    margin:0 auto;
                 }
             }
             main.user-info {

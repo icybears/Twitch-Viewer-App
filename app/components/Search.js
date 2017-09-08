@@ -28,6 +28,10 @@ function Search(props) {
                                                     removeFromWatchlist={removeFromWatchlist}
                                                     />)
                 }
+                {
+                    !channels &&
+                        <aside id="empty-search">Nothing to search for yet.</aside>
+                }
                 </div>
         </div>
     )

@@ -7,9 +7,7 @@ import Nav from './Nav';
 import Watchlist from './Watchlist';
 import Main from './Main';
 import {Route, Switch} from 'react-router-dom';
-// ////FAKE DATA//////
-// import mock from '../utils/mock-data';
-// /////////////////
+
 
  class App extends React.Component{
 

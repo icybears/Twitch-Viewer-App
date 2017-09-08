@@ -562,7 +562,15 @@ html {
         font-size: 1.5em;
         color: #301a4d; }
         #root-container #main-container main ul li {
-          margin: 1em 0; }
+          margin: 1em 0;
+          font-weight: 300; }
+          #root-container #main-container main ul li a {
+            color: #161515;
+            text-decoration: none;
+            font-weight: 400; }
+          #root-container #main-container main ul li a:active,
+          #root-container #main-container main ul li a:hover {
+            text-decoration: underline; }
   #root-container #search-container {
     padding-top: 3.8em;
     position: relative; }
@@ -572,6 +580,9 @@ html {
       position: absolute;
       left: 0;
       top: 0; }
+    #root-container #search-container aside#empty-search {
+      font-size: 2em;
+      color: #e6e6e6; }
     #root-container #search-container aside.error-msg {
       text-align: center;
       padding: .2em .3em;
@@ -759,8 +770,10 @@ html {
         text-align: center;
         color: #180d27; }
       #root-container #watchlist-container div.user header.user-header img {
+        display: block;
         width: 150px;
-        border-radius: 100%; }
+        border-radius: 100%;
+        margin: 0 auto; }
       #root-container #watchlist-container div.user main.user-info {
         padding: .3em .5em;
         width: 11em;
