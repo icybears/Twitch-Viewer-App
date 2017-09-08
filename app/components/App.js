@@ -7,6 +7,7 @@ import Nav from './Nav';
 import Watchlist from './Watchlist';
 import Main from './Main';
 import {Route, Switch} from 'react-router-dom';
+import data from '../utils/mock-data';
 
 
  class App extends React.Component{
@@ -14,11 +15,11 @@ import {Route, Switch} from 'react-router-dom';
     state = {
         isFetching:false,
         searchTerm: null,
-        channels: null,
+        channels: data._mockChannels,
         error: null,
         errorMsg: null,
-        watchlist: [],
-        watchlist_users:[]
+        watchlist: data._mockWatchlist,
+        watchlist_users:data._mockUsers,
     }
 
     searchName = (searchTerm) => {
