@@ -14,7 +14,6 @@ class User extends React.Component {
         const {_id} = this.props.user;
         api.getStream(_id)
         .then( data => {
-            console.log(data);
             if(data === null){
                this.setState({
                    fetching:false,
@@ -32,8 +31,11 @@ class User extends React.Component {
                     game:data.game
                 })
             }
-            
         })
+    }
+    handleClick = () => {
+        const id = this.props.user._id;
+        this.props.removeFromWatchlist(id);
     }
     render(){
         const { 
@@ -62,7 +64,7 @@ class User extends React.Component {
                     <img src={logo_url} alt={`Logo of ${display_name}`} />
                 </header>
                 <main className="user-info">
-                    
+                    <button onClick={this.handleClick} className="remove"><i className="fa fa-times"/></button>
                     <p className="online-status">
                        {isOnline && <span className="online">ONLINE</span>}
                         {!isOnline && <span className="offline">OFFLINE</span>}

@@ -768,7 +768,19 @@ html {
         flex-direction: column;
         align-items: space-around;
         background-color: #180d27;
-        color: #ebebeb; }
+        color: #ebebeb;
+        position: relative; }
+        #root-container #watchlist-container div.user main.user-info button.remove {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: transparent;
+          color: #5f3499;
+          border: none;
+          padding: .2em .3em;
+          cursor: pointer; }
+          #root-container #watchlist-container div.user main.user-info button.remove:hover {
+            color: #e1e1e1; }
         #root-container #watchlist-container div.user main.user-info p {
           font-size: .9em;
           margin: .5em 0; }
@@ -784,23 +796,27 @@ html {
         #root-container #watchlist-container div.user main.user-info p.preview,
         #root-container #watchlist-container div.user main.user-info p.visit-channel {
           text-align: center; }
-        #root-container #watchlist-container div.user main.user-info button {
-          border: none;
-          outline: none;
-          padding: .3em .5em;
-          background-color: #482773;
-          transition: all .3s ease;
-          border-radius: 99px;
-          color: #fafafa; }
-          #root-container #watchlist-container div.user main.user-info button a {
-            color: inherit;
-            text-decoration: none; }
-          #root-container #watchlist-container div.user main.user-info button:hover {
-            background-color: #bb534d; }
-          #root-container #watchlist-container div.user main.user-info button:active {
-            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
-            color: #fafafa;
-            background-color: #06e0ab; }
+          #root-container #watchlist-container div.user main.user-info p.preview button,
+          #root-container #watchlist-container div.user main.user-info p.visit-channel button {
+            border: none;
+            outline: none;
+            padding: .3em .5em;
+            background-color: #482773;
+            transition: all .3s ease;
+            border-radius: 99px;
+            color: #fafafa; }
+            #root-container #watchlist-container div.user main.user-info p.preview button a,
+            #root-container #watchlist-container div.user main.user-info p.visit-channel button a {
+              color: inherit;
+              text-decoration: none; }
+            #root-container #watchlist-container div.user main.user-info p.preview button:hover,
+            #root-container #watchlist-container div.user main.user-info p.visit-channel button:hover {
+              background-color: #bb534d; }
+            #root-container #watchlist-container div.user main.user-info p.preview button:active,
+            #root-container #watchlist-container div.user main.user-info p.visit-channel button:active {
+              box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+              color: #fafafa;
+              background-color: #06e0ab; }
   #root-container .clearfix :after {
     content: "";
     display: table;

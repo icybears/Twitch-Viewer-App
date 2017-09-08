@@ -7,16 +7,16 @@ import Nav from './Nav';
 import Watchlist from './Watchlist';
 import Main from './Main';
 import {Route, Switch} from 'react-router-dom';
-////FAKE DATA//////
-import mock from '../utils/mock-data';
-/////////////////
+// ////FAKE DATA//////
+// import mock from '../utils/mock-data';
+// /////////////////
 
  class App extends React.Component{
 
     state = {
         isFetching:false,
         searchTerm: null,
-        channels: mock,
+        channels: null,
         error: null,
         errorMsg: null,
         watchlist: [],
@@ -125,7 +125,9 @@ import mock from '../utils/mock-data';
                                 />
                         )}/>
                         <Route path="/watchlist" render={() => (
-                            <Watchlist watchlist_users={watchlist_users} />
+                            <Watchlist watchlist_users={watchlist_users} 
+                                      removeFromWatchlist={this.removeFromWatchlist}
+                            />
                         )
                         } />
                 </section>
