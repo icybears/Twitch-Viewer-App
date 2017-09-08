@@ -104,7 +104,7 @@ import {Route, Switch} from 'react-router-dom';
 
         return(
             <div id="root-container">
-                <h1>Twitch Viewer App<span>by Icybears</span></h1>
+                <h1>Twitch Viewer App&nbsp;<span>by&nbsp;<a href="https://github.com/icybears" target="_blank">Icybears</a></span></h1>
                 <Nav />
                 {isFetching && 
                     <div id="loader">

@@ -432,6 +432,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   min-height: 100vh; }
   #root-container h1 {
+    z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
@@ -444,8 +445,13 @@ html {
     #root-container h1 span {
       display: block;
       font-size: .6em;
-      padding-left: 1em;
-      font-weight: 300; }
+      font-weight: 300;
+      padding-bottom: .2em; }
+      #root-container h1 span a {
+        color: inherit;
+        cursor: pointer; }
+        #root-container h1 span a:hover {
+          color: #7741bf; }
   #root-container section#view {
     position: relative;
     padding-top: 8em; }

@@ -17,7 +17,7 @@ function Main() {
                     <li>
                         Never miss out !
                     </li>
-                    <li><a href="https://github.com/icybears/Twitch-Viewer-App">Github Repository</a></li>
+                    <li><a href="https://github.com/icybears/Twitch-Viewer-App" target="_blank">Github Repository</a></li>
                 </ul>
             </main>
         </div>
