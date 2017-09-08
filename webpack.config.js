@@ -15,9 +15,6 @@ const config = {
       { test: /\.css$/, use: ['style-loader', 'css-loader','postcss-loader'] }
     ]
   },
-  devServer: {
-    historyApiFallback: true // this one is for fixing the routing issue
-  },
  plugins:[
      new HtmlWebpackPlugin({
          template: './app/index.html'
