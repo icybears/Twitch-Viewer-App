@@ -738,7 +738,7 @@ html {
       transform: translate(-50%, -30%);
       font-size: 2em;
       color: #e6e6e6;
-      font-weight: bold;
+      font-weight: 400;
       width: 100%;
       text-align: center; }
     #root-container #watchlist-container div.user {
